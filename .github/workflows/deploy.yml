@@ -31,5 +31,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            NGUYENLEMINHKHOI/hello-app:latest
-            NGUYENLEMINHKHOI/hello-app:${{ github.sha }}
+            docker.io/${{ toLower(secrets.NGUYENLEMINHKHOI) }}/hello-app:latest
+            docker.io/${{ toLower(secrets.NGUYENLEMINHKHOI) }}/hello-app:${{ github.sha }}
