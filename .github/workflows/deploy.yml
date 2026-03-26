@@ -20,8 +20,8 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          username: ${{ secrets.DOCKERHUB_USERNAME }}
-          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          username: ${{ secrets.NGUYENLEMINHKHOI }}
+          password: ${{ secrets.PASSWORD }}
 
       - name: Build and push image
         uses: docker/build-push-action@v5
@@ -30,5 +30,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/hello-app:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/hello-app:${{ github.sha }}
+            ${{ secrets.NGUYENLEMINHKHOI }}/hello-app:latest
+            ${{ secrets.NGUYENLEMINHKHOI }}/hello-app:${{ github.sha }}
