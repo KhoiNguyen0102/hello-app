@@ -20,7 +20,6 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@v2
         with:
-          registry: docker.io
           username: nguyenleminhkhoi
           password: ${{ secrets.PASSWORD }}
 
@@ -31,5 +30,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            docker.io/${{ toLower(secrets.NGUYENLEMINHKHOI) }}/hello-app:latest
-            docker.io/${{ toLower(secrets.NGUYENLEMINHKHOI) }}/hello-app:${{ github.sha }}
+            toLower(NGUYENLEMINHKHOI)/hello-app:latest
+            toLower(NGUYENLEMINHKHOI)/hello-app:github.sha
